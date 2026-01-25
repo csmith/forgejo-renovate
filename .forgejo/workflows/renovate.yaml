@@ -21,3 +21,4 @@ jobs:
           RENOVATE_CONFIG_FILE: ${{ forgejo.workspace }}/config.js
           LOG_LEVEL: "debug"
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
+          GITHUB_COM_TOKEN: ${{ secrets.RENOVATE_GITHUB_TOKEN }}
