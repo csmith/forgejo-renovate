@@ -1,0 +1,23 @@
+name: renovate
+
+on:
+  workflow_dispatch:
+    branches:
+      - master 
+  schedule:
+    - cron: "30 6 * * *"
+  push:
+    branches:
+      - master 
+
+jobs:
+  renovate:
+    runs-on: ubuntu-latest
+    container: ghcr.io/renovatebot/renovate:latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: renovate
+        env:
+          RENOVATE_CONFIG_FILE: ${{ forgejo.workspace }}/config.js
+          LOG_LEVEL: "debug"
+          RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
