@@ -1,6 +1,6 @@
 module.exports = {
 	platform: 'gitea',
-	endpoint: 'http://forgejo:3000/api/v1/',
+	endpoint: 'http://forgejo.local:3000/api/v1/',
 	gitAuthor: 'Renovate Bot <git+renovate@chameth.com>',
 	username: 'renovate-bot',
 	autodiscover: true,
