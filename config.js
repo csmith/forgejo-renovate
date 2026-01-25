@@ -9,6 +9,7 @@ module.exports = {
 		extends: ['config:recommended'],
 		minimumReleaseAge: "28 days",
 		internalChecksFilter: "strict",
+		postUpdateOptions: ['gomodTidy', 'gomodUpdateImportPaths'],
 	},
 	optimizeForDisabled: true,
 	persistRepoData: true,
