@@ -6,10 +6,7 @@ module.exports = {
 	autodiscover: true,
 	onboardingConfig: {
 		$schema: 'https://docs.renovatebot.com/renovate-schema.json',
-		extends: ['config:recommended'],
-		minimumReleaseAge: "28 days",
-		internalChecksFilter: "strict",
-		postUpdateOptions: ['gomodTidy', 'gomodUpdateImportPaths'],
+		extends: ['local>meta/renovate'],
 	},
 	optimizeForDisabled: true,
 	persistRepoData: true,

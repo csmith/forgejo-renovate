@@ -1,12 +1,4 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ],
-  "minimumReleaseAge": "28 days",
-  "internalChecksFilter": "strict",
-  "postUpdateOptions": [
-    "gomodTidy",
-    "gomodUpdateImportPaths"
-  ]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",	
+  "extends": ["local>meta/renovate"]
 }
