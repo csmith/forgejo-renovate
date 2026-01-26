@@ -8,5 +8,13 @@
   "postUpdateOptions": [
     "gomodTidy",
     "gomodUpdateImportPaths"
+  ],
+  "packageRules": [
+    {
+      "matchManagers": ["gomod"],
+      "matchPackagePatterns": ["^github\\.com\\/csmith\\/", "^chameth\\.com\\/", "^tailscale\\.com"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    }
   ]
 }
