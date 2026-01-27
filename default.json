@@ -14,6 +14,12 @@
   "packageRules": [
     {
       "matchManagers": ["gomod"],
+      "matchPackageNames": ["go"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchManagers": ["gomod"],
       "matchPackagePatterns": ["^github\\.com\\/csmith\\/", "^chameth\\.com\\/", "^tailscale\\.com"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
