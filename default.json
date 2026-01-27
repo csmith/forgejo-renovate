@@ -3,6 +3,7 @@
   "extends": [
     "config:recommended"
   ],
+  "prHourlyLimit": 0,
   "minimumReleaseAge": "28 days",
   "internalChecksFilter": "strict",
   "assignees": ["chris"],
