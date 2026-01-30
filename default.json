@@ -28,6 +28,13 @@
       "matchManagers": ["dockerfile", "docker-compose"],
       "matchPackageNames": ["ghcr.io/greboid/dockerbase/nonroot"],
       "automerge": true
+    },
+    {
+      "matchManagers": ["dockerfile", "docker-compose"],
+      "matchPackageNames": ["golang"],
+      "matchUpdateTypes": ["patch"],
+      "automerge": true,
+      "minimumReleaseAge": "0 days"
     }
   ]
 }
