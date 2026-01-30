@@ -23,6 +23,11 @@
       "matchPackagePatterns": ["^github\\.com\\/csmith\\/", "^chameth\\.com\\/", "^tailscale\\.com"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
+    },
+    {
+      "matchManagers": ["dockerfile", "docker-compose"],
+      "matchPackageNames": ["ghcr.io/greboid/dockerbase/nonroot"],
+      "automerge": true
     }
   ]
 }
