@@ -15,7 +15,7 @@
     },
     {
       "matchManagers": ["gomod"],
-      "matchPackagePatterns": ["^tailscale\\.com"],
+      "matchPackagePatterns": ["^tailscale\\.com", "^golang\\.org/x/"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
     },
