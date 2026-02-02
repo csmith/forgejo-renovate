@@ -11,7 +11,8 @@
       "matchManagers": ["gomod"],
       "matchPackageNames": ["go"],
       "matchUpdateTypes": ["minor", "patch"],
-      "automerge": true
+      "automerge": true,
+      "minimumReleaseAge": "0 days"
     },
     {
       "matchManagers": ["gomod"],
