@@ -1,16 +1,11 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:recommended"
-  ],
+  "extends": ["config:recommended"],
   "prHourlyLimit": 0,
   "minimumReleaseAge": "28 days",
   "internalChecksFilter": "strict",
   "assignees": ["chris"],
-  "postUpdateOptions": [
-    "gomodTidy",
-    "gomodUpdateImportPaths"
-  ],
+  "postUpdateOptions": ["gomodTidy", "gomodUpdateImportPaths"],
   "packageRules": [
     {
       "matchManagers": ["gomod"],
@@ -20,9 +15,28 @@
     },
     {
       "matchManagers": ["gomod"],
-      "matchPackagePatterns": ["^github\\.com\\/csmith\\/", "^chameth\\.com\\/", "^tailscale\\.com"],
+      "matchPackagePatterns": ["^tailscale\\.com"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true
+    },
+    {
+      "matchManagers": ["gomod"],
+      "matchPackagePatterns": [
+        "^github\\.com\\/csmith\\/",
+        "^chameth\\.com\\/"
+      ],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true,
+      "minimumReleaseAge": "0 days"
+    },
+    {
+      "matchManagers": ["gomod"],
+      "matchPackagePatterns": [
+        "^github\\.com\\/csmith\\/",
+        "^chameth\\.com\\/"
+      ],
+      "matchUpdateTypes": ["major"],
+      "minimumReleaseAge": "0 days"
     },
     {
       "matchManagers": ["dockerfile", "docker-compose"],
