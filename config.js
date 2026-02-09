@@ -10,5 +10,5 @@ module.exports = {
 	},
 	optimizeForDisabled: true,
 	persistRepoData: true,
-	allowedCommands: ['^.&$'],
+	allowedCommands: ['^.*$'],
 };
