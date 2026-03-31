@@ -48,7 +48,7 @@
     {
       "matchManagers": ["dockerfile", "docker-compose"],
       "matchPackageNames": ["golang"],
-      "matchUpdateTypes": ["patch"],
+      "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
       "minimumReleaseAge": "0 days"
     }
