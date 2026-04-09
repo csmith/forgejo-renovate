@@ -9,6 +9,10 @@
   "postUpdateOptions": ["gomodTidy", "gomodUpdateImportPaths"],
   "packageRules": [
     {
+      "matchPackageNames": ["meta/workflows"],
+      "registryUrls": ["https://git.yak-wall.ts.net"]
+    },	  
+    {
       "matchManagers": ["gomod"],
       "matchPackageNames": ["go"],
       "matchUpdateTypes": ["minor", "patch"],
