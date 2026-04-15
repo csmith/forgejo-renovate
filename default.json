@@ -27,6 +27,12 @@
     },
     {
       "matchManagers": ["gomod"],
+      "matchPackageNames": ["modernc.org/sqlite"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "automerge": true
+    },
+    {
+      "matchManagers": ["gomod"],
       "matchPackagePatterns": [
         "^github\\.com\\/csmith\\/",
         "^chameth\\.com\\/"
