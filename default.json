@@ -7,11 +7,50 @@
   "assignees": ["chris"],
   "branchTopic": "{{{depNameSanitized}}}-{{{newVersion}}}",
   "postUpdateOptions": ["gomodTidy", "gomodUpdateImportPaths"],
+  "customDatasources": {
+    "rendock": {
+      "defaultRegistryUrlTemplate": "http://rendock:8080/v1/tags/{{packageName}}"
+    }
+  },
+  "dockerfile": {
+    "enabled": false
+  },
+  "docker-compose": {
+    "enabled": false
+  },
+  "customManagers": [
+    {
+      "customType": "regex",
+      "description": "Resolve Dockerfile base images via rendock so they get accurate first-seen timestamps",
+      "managerFilePatterns": [
+        "/(^|/)Dockerfile[^/]*$/",
+        "/(^|/)Containerfile[^/]*$/"
+      ],
+      "matchStrings": [
+        "(?m)^[ \\t]*FROM[ \\t]+(?:--platform=\\S+[ \\t]+)?(?<depName>[^\\s:@]+):(?<currentValue>[^\\s@]+)(?:@(?<currentDigest>sha256:[a-f0-9]+))?"
+      ],
+      "datasourceTemplate": "custom.rendock",
+      "versioningTemplate": "docker"
+    },
+    {
+      "customType": "regex",
+      "description": "Resolve docker-compose images via rendock so they get accurate first-seen timestamps",
+      "managerFilePatterns": [
+        "/(^|/)docker-compose[^/]*\\.ya?ml$/",
+        "/(^|/)compose[^/]*\\.ya?ml$/"
+      ],
+      "matchStrings": [
+        "(?m)^[ \\t]*image:[ \\t]*[\"']?(?<depName>[^\\s:@\"']+):(?<currentValue>[^\\s@\"']+)(?:@(?<currentDigest>sha256:[a-f0-9]+))?[\"']?"
+      ],
+      "datasourceTemplate": "custom.rendock",
+      "versioningTemplate": "docker"
+    }
+  ],
   "packageRules": [
     {
       "matchPackageNames": ["meta/workflows"],
       "registryUrls": ["https://git.yak-wall.ts.net"]
-    },	  
+    },
     {
       "matchManagers": ["gomod"],
       "matchPackageNames": ["go"],
@@ -51,12 +90,12 @@
       "minimumReleaseAge": "0 days"
     },
     {
-      "matchManagers": ["dockerfile", "docker-compose"],
+      "matchDatasources": ["custom.rendock"],
       "matchPackageNames": ["ghcr.io/greboid/dockerbase/nonroot"],
       "automerge": true
     },
     {
-      "matchManagers": ["dockerfile", "docker-compose"],
+      "matchDatasources": ["custom.rendock"],
       "matchPackageNames": ["golang"],
       "matchUpdateTypes": ["minor", "patch"],
       "automerge": true,
