@@ -9,7 +9,7 @@
   "postUpdateOptions": ["gomodTidy", "gomodUpdateImportPaths"],
   "customDatasources": {
     "rendock": {
-      "defaultRegistryUrlTemplate": "http://rendock:8080/v1/tags/{{packageName}}"
+      "defaultRegistryUrlTemplate": "https://rendock.yak-wall.ts.net/v1/tags/{{packageName}}"
     }
   },
   "dockerfile": {
