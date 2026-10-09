@@ -11,6 +11,7 @@ module.exports = {
   optimizeForDisabled: true,
   persistRepoData: true,
   allowedCommands: ['^.*$'],
+  cachePrivatePackages: true,
   hostRules: [
     {
       matchHost: 'git.yak-wall.ts.net',
