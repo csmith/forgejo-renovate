@@ -17,6 +17,10 @@ module.exports = {
       matchHost: 'git.yak-wall.ts.net',
       token: process.env.RENOVATE_TOKEN,
     },
+    {
+      matchHost: 'rendock.yak-wall.ts.net',
+      allowInternal: true,
+    },
   ],
   customEnvVariables: {
     GOPRIVATE: 'chameth.com',
