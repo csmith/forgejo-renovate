@@ -25,7 +25,9 @@
       "description": "Resolve Dockerfile base images via rendock so they get accurate first-seen timestamps",
       "managerFilePatterns": [
         "/(^|/)Dockerfile[^/]*$/",
-        "/(^|/)Containerfile[^/]*$/"
+        "/(^|/)Containerfile[^/]*$/",
+        "/(^|/|\\.)Dockerfile$/",
+        "/(^|/|\\.)Containerfile$/"
       ],
       "matchStrings": [
         "(?m)^[ \\t]*FROM[ \\t]+(?:--platform=\\S+[ \\t]+)?(?<depName>[^\\s:@]+):(?<currentValue>[^\\s@]+)(?:@(?<currentDigest>sha256:[a-f0-9]+))?"
